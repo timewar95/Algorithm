@@ -2,7 +2,7 @@ package util;
 
 import java.util.Random;
 
-public class SortTestHelper {
+public class SortTestHelper{
 	/**
 	 * @param i 随机数组元素个数
 	 * @param left 随机数组元素最小值
@@ -28,9 +28,9 @@ public class SortTestHelper {
 			System.out.print(arr[i]);
 			System.out.print(" ");
 			//每打印10个元素换1行
-			if((i+1)%10==0){
+			/*if((i+1)%10==0){
 				System.out.println();
-			}
+			}*/
 		}
 		System.out.println();
 	}

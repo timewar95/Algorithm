@@ -2,30 +2,32 @@ package sort;
 
 import util.SortTestHelper;
 
-public class SelectionSort {
+public class SelectionSort extends Sort{
 	
-	//禁止实例化选择排序的类
-	private SelectionSort() {
-	}
-	public static void selectionSort(int[] arr){
+	@Override
+	public void sort(int[] arr) {
+		// TODO Auto-generated method stub
 		for(int i=0;i<arr.length-1;i++){
 			int minIndex=i;
 			for(int j=i+1;j<arr.length;j++){
-				if(arr[j]<arr[minIndex])
+				if(arr[j]<arr[minIndex]){
 					minIndex=j;
+				}
 			}
-			//一次内层循环过后才进行最小元素位置的交换
-			int tmep=arr[i];
+			//一次内层循环结束后再交换最小元素的位置
+			int temp=arr[i];
 			arr[i]=arr[minIndex];
-			arr[minIndex]=tmep;
+			arr[minIndex]=temp;
 		}
 	}
-	public static void  main(String args[]){
-		int[] arr = SortTestHelper.generateRandomArray(100, 0, 100);
-		System.out.println("排序前:");
-		SortTestHelper.printArray(arr);
-		SelectionSort.selectionSort(arr);
-		System.out.println("排序后:");
-		SortTestHelper.printArray(arr);
+	@Override
+	public void sortPerformanceTest(int arrLength, int min, int max) {
+		// TODO Auto-generated method stub
+		int[] randomArray = SortTestHelper.generateRandomArray(arrLength,min, max);
+		long startTime = System.currentTimeMillis();
+		sort(randomArray);
+		long endTime=System.currentTimeMillis();
+		System.out.println("元素是否有序:"+isOrder(randomArray));
+		System.out.println("选测排序"+arrLength+"个元素花费"+(endTime-startTime)+"ms");
 	}
 }
