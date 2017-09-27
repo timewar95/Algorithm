@@ -8,14 +8,14 @@ public class Main {
 		//≤Â»Î≈≈–Ú
 		InsertrionSort insertrionSort=new InsertrionSort();
 		context.setSortAlgorithm(insertrionSort);
-		context.sortPerformanceTest(100000, 0, 100000);
-/*		//—°‘Ò≈≈–Ú
+		context.sortPerformanceTest(1000000, 0, 10);
+	/*	//—°‘Ò≈≈–Ú
 		SelectionSort selectionSort=new SelectionSort();
 		context.setSortAlgorithm(selectionSort);
-		context.sortPerformanceTest(100000, 0, 10);*/
-		
+		context.sortPerformanceTest(1000000, 0, 10);*/
+		//πÈ≤¢≈≈–Ú
 		MergeSort mergeSort=new MergeSort();
 		context.setSortAlgorithm(mergeSort);
-		context.sortPerformanceTest(100000, 0, 100000);
+		context.sortPerformanceTest(1000000, 0, 10);
 	}
 }

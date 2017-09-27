@@ -22,6 +22,23 @@ public class SortTestHelper{
 	}
 	
 	/**
+	 * @param i 随机数组元素个数
+	 * @param left 随机数组元素最小值
+	 * @param right 随机数组元素最大值
+	 * @return 返回生成的随机数组
+	 */
+	public static Integer[] geRandomIntegerArray(int count,int min,int max){
+		Integer[] arr=new Integer[count];
+		Random random=new Random();
+		for(int i=0;i<count;i++){
+			//若要生成[4,8]范围的元素，则需区间[4,9)
+			//max-min+1 
+			arr[i]=random.nextInt(max-min+1)+min;
+		}
+		return arr;
+	}
+	
+	/**
 	 * @param arrlength 数组大小
 	 * @param swapTime 交换次数
 	 * @return 返回一个近乎有序的数组

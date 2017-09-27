@@ -20,7 +20,9 @@ public class InsertrionSort extends Sort{
 	@Override
 	public void sortPerformanceTest(int arrLength, int min, int max) {
 		// TODO Auto-generated method stub
+		
 		int[] randomArray = SortTestHelper.generateRandomArray(arrLength,min, max);
+		//int[] randomArray= SortTestHelper.generateAlmostOrderArray(arrLength, 10);
 		long startTime = System.currentTimeMillis();
 		sort(randomArray);
 		long endTime=System.currentTimeMillis();

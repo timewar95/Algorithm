@@ -1,5 +1,9 @@
 package sort;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Arrays;
 
 import util.SortTestHelper;
@@ -14,6 +18,7 @@ public class MergeSort extends Sort{
 	public void sortPerformanceTest(int arrLength, int min, int max) {
 		// TODO Auto-generated method stub
 		int[] randomArray = SortTestHelper.generateRandomArray(arrLength,min, max);
+		//int[] randomArray= SortTestHelper.generateAlmostOrderArray(arrLength, 10);
 		long startTime = System.currentTimeMillis();
 		sort(randomArray);
 		long endTime=System.currentTimeMillis();
@@ -52,5 +57,12 @@ public class MergeSort extends Sort{
 				j++;
 			}
 		}
-	}; 
+	};
+	
+	public static void main(String[] args) {
+		double   f   =   111231.5585;  
+		BigDecimal   b   =   new   BigDecimal(f);  
+		long f1 = Math.round(f);
+		System.out.println(f1);
+	}
 }
